@@ -1,0 +1,116 @@
+# ==============================================================================
+# Node.js & Dependencies
+# ==============================================================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# ==============================================================================
+# Build & Output Directories
+# ==============================================================================
+dist/
+dist-ssr/
+build/
+out/
+.next/
+*.tsbuildinfo
+
+# ==============================================================================
+# Environment Variables & Secrets
+# ==============================================================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+!*.env.example
+
+# ==============================================================================
+# Python & Virtual Environments (Selenium / Simulation / Scripts)
+# ==============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Selenium / WebDriver Binaries & Logs
+chromedriver
+chromedriver.exe
+geckodriver
+geckodriver.exe
+ghostdriver.log
+selenium.log
+
+# ==============================================================================
+# Logs & Diagnostic Files
+# ==============================================================================
+logs/
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# ==============================================================================
+# IDEs & Editor Configuration
+# ==============================================================================
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.swp
+*.swo
+*~
+
+# ==============================================================================
+# Operating System Files
+# ==============================================================================
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ==============================================================================
+# Temporary / Cache Files
+# ==============================================================================
+*.tmp
+*.temp
+*.bak
+.cache/
+.eslintcache
+.stylelintcache
