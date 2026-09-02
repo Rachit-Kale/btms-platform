@@ -22,6 +22,16 @@ const io = new Server(server, {
 app.use(cors());
 app.use(express.json());
 
+// Health check routes (for Render, uptime monitors, and load balancers)
+app.get(["/health", "/healthz"], (req, res) => {
+  res.status(200).json({
+    status: "healthy",
+    timestamp: new Date().toISOString(),
+    uptime: Math.floor(process.uptime()),
+    service: "btms-backend"
+  });
+});
+
 // Initialize Telemetry Simulator
 const TelemetrySimulator = require("./services/simulator");
 const simulator = new TelemetrySimulator(io);
@@ -30,7 +40,8 @@ const simulator = new TelemetrySimulator(io);
 const apiRoutes = require("./routes/api")(simulator);
 app.use("/api", apiRoutes);
 
-// Root healthcheck
+
+// Root route
 app.get("/", (req, res) => {
   res.json({
     status: "online",
@@ -56,7 +67,7 @@ io.on("connection", (socket) => {
 simulator.start();
 
 const PORT = process.env.PORT || 5000;
-server.listen(PORT, () => {
+server.listen(PORT, "0.0.0.0", () => {
   console.log(`====================================================`);
   console.log(`⚡ BTMS Backend Server running on port ${PORT}`);
   console.log(`📊 Socket.IO Telemetry Stream active`);

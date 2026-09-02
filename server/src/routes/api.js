@@ -9,6 +9,16 @@ const { runOptimization } = require("../services/optimizer");
 const { generatePdfReport, generateCsvData } = require("../services/reportService");
 
 module.exports = function(simulator) {
+  // 0. API Health Check
+  router.get("/health", (req, res) => {
+    res.status(200).json({
+      status: "healthy",
+      timestamp: new Date().toISOString(),
+      uptime: Math.floor(process.uptime()),
+      service: "btms-api"
+    });
+  });
+
   // 1. Live Telemetry Snapshot
   router.get("/telemetry/live", (req, res) => {
     res.json(simulator.getLiveSnapshot());
