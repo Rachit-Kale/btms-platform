@@ -114,3 +114,4 @@ $RECYCLE.BIN/
 .cache/
 .eslintcache
 .stylelintcache
+.env.production
