@@ -6,10 +6,12 @@ import axios from 'axios';
 
 const TelemetryContext = createContext(null);
 
-// Determine direct backend URL in dev mode to avoid Vite WS proxy handshake aborts
-const SOCKET_URL = typeof window !== 'undefined' && window.location.hostname === 'localhost'
-  ? 'http://localhost:5000'
-  : window.location.origin;
+// Determine backend URL for Socket.IO streaming (Render / localhost)
+const SOCKET_URL = import.meta.env.VITE_API_URL
+  ? import.meta.env.VITE_API_URL.replace(/\/+$/, '')
+  : (typeof window !== 'undefined' && window.location.hostname === 'localhost'
+    ? 'http://localhost:5000'
+    : (typeof window !== 'undefined' ? window.location.origin : ''));
 
 // Singleton socket instance preventing StrictMode double-mount connection teardowns
 let socket;
