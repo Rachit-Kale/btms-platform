@@ -1,0 +1,6 @@
+# robots.txt for AI-Enabled Micro-channel BTMS Platform
+User-agent: *
+Allow: /
+
+# Sitemap URL (Replace with your actual domain when custom domain is attached)
+Sitemap: https://ai-btms-platform.vercel.app/sitemap.xml
