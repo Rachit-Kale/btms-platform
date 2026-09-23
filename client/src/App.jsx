@@ -14,7 +14,29 @@ import DigitalTwin from './pages/DigitalTwin';
 import ReportsAnalytics from './pages/ReportsAnalytics';
 
 function App() {
-  const [activeTab, setActiveTab] = useState('home');
+  const getInitialTab = () => {
+    const path = window.location.pathname;
+    if (path === '/dashboard') return 'dashboard';
+    if (path === '/ai-prediction' || path === '/ai') return 'ai';
+    if (path === '/digital-twin' || path === '/twin') return 'twin';
+    if (path === '/reports') return 'reports';
+    return 'home';
+  };
+  
+  const [activeTab, setActiveTab] = useState(getInitialTab());
+
+  // Optionally update URL when tab changes
+  React.useEffect(() => {
+    let path = '/';
+    if (activeTab === 'dashboard') path = '/dashboard';
+    if (activeTab === 'ai') path = '/ai-prediction';
+    if (activeTab === 'twin') path = '/digital-twin';
+    if (activeTab === 'reports') path = '/reports';
+    
+    if (window.location.pathname !== path) {
+      window.history.pushState({}, '', path);
+    }
+  }, [activeTab]);
 
   return (
     <TelemetryProvider>
