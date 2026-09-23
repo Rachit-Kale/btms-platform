@@ -101,30 +101,33 @@ const Home = ({ setActiveTab }) => {
 
           {/* Action CTAs */}
           <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
-            <button
-              onClick={() => setActiveTab('dashboard')}
-              className="btn-lime"
+            <a
+              href="/dashboard"
+              onClick={(e) => { e.preventDefault(); setActiveTab('dashboard'); }}
+              className="btn-lime flex items-center space-x-2"
             >
               <Activity className="w-4 h-4 text-dark-950 stroke-[2.5]" />
               <span>Launch Live Dashboard</span>
               <ArrowRight className="w-4 h-4 text-dark-950 stroke-[2.5]" />
-            </button>
+            </a>
 
-            <button
-              onClick={() => setActiveTab('ai')}
-              className="btn-dark"
+            <a
+              href="/ai-prediction"
+              onClick={(e) => { e.preventDefault(); setActiveTab('ai'); }}
+              className="btn-dark flex items-center space-x-2"
             >
               <Cpu className="w-4 h-4 text-lime" />
               <span>AI Prediction Sandbox</span>
-            </button>
+            </a>
 
-            <button
-              onClick={() => setActiveTab('twin')}
-              className="btn-dark"
+            <a
+              href="/digital-twin"
+              onClick={(e) => { e.preventDefault(); setActiveTab('twin'); }}
+              className="btn-dark flex items-center space-x-2"
             >
               <Layers className="w-4 h-4 text-lime" />
               <span>Explore 3D Digital Twin</span>
-            </button>
+            </a>
           </div>
 
         </div>
@@ -347,9 +350,10 @@ const Home = ({ setActiveTab }) => {
       {/* 4 Navigation Cards */}
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         
-        <div 
-          onClick={() => setActiveTab('dashboard')}
-          className="bento-card p-6 hover:border-lime/60 cursor-pointer transition-all duration-300 group"
+        <a 
+          href="/dashboard"
+          onClick={(e) => { e.preventDefault(); setActiveTab('dashboard'); }}
+          className="bento-card block p-6 hover:border-lime/60 cursor-pointer transition-all duration-300 group"
         >
           <div className="w-10 h-10 rounded-xl bg-lime text-dark-950 flex items-center justify-center mb-4 group-hover:scale-110 transition font-black">
             <Activity className="w-5 h-5" />
@@ -360,11 +364,12 @@ const Home = ({ setActiveTab }) => {
           <p className="text-xs text-zinc-400 mt-2">
             Real-time thermal heatmap, multi-series Recharts live stream, sensor table, and anomaly alerts.
           </p>
-        </div>
+        </a>
 
-        <div 
-          onClick={() => setActiveTab('ai')}
-          className="bento-card p-6 hover:border-lime/60 cursor-pointer transition-all duration-300 group"
+        <a 
+          href="/ai-prediction"
+          onClick={(e) => { e.preventDefault(); setActiveTab('ai'); }}
+          className="bento-card block p-6 hover:border-lime/60 cursor-pointer transition-all duration-300 group"
         >
           <div className="w-10 h-10 rounded-xl bg-lime text-dark-950 flex items-center justify-center mb-4 group-hover:scale-110 transition font-black">
             <Cpu className="w-5 h-5" />
@@ -375,11 +380,12 @@ const Home = ({ setActiveTab }) => {
           <p className="text-xs text-zinc-400 mt-2">
             Surrogate ML inference, SHAP feature importance, Pareto trade-off curves, and HITL approvals.
           </p>
-        </div>
+        </a>
 
-        <div 
-          onClick={() => setActiveTab('twin')}
-          className="bento-card p-6 hover:border-lime/60 cursor-pointer transition-all duration-300 group"
+        <a 
+          href="/digital-twin"
+          onClick={(e) => { e.preventDefault(); setActiveTab('twin'); }}
+          className="bento-card block p-6 hover:border-lime/60 cursor-pointer transition-all duration-300 group"
         >
           <div className="w-10 h-10 rounded-xl bg-lime text-dark-950 flex items-center justify-center mb-4 group-hover:scale-110 transition font-black">
             <Layers className="w-5 h-5" />
@@ -390,11 +396,12 @@ const Home = ({ setActiveTab }) => {
           <p className="text-xs text-zinc-400 mt-2">
             3D Three.js pack visualizer, interactive refrigeration loop schematic, and filterable CFD dataset.
           </p>
-        </div>
+        </a>
 
-        <div 
-          onClick={() => setActiveTab('reports')}
-          className="bento-card p-6 hover:border-lime/60 cursor-pointer transition-all duration-300 group"
+        <a 
+          href="/reports"
+          onClick={(e) => { e.preventDefault(); setActiveTab('reports'); }}
+          className="bento-card block p-6 hover:border-lime/60 cursor-pointer transition-all duration-300 group"
         >
           <div className="w-10 h-10 rounded-xl bg-lime text-dark-950 flex items-center justify-center mb-4 group-hover:scale-110 transition font-black">
             <FileText className="w-5 h-5" />
@@ -405,7 +412,7 @@ const Home = ({ setActiveTab }) => {
           <p className="text-xs text-zinc-400 mt-2">
             Predicted vs. CFD actual scatter plots, R² validation, immutable audit logs, and PDF/CSV export.
           </p>
-        </div>
+        </a>
 
       </section>
 
