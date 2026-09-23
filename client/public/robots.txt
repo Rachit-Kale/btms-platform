@@ -2,5 +2,5 @@
 User-agent: *
 Allow: /
 
-# Sitemap URL (Replace with your actual domain when custom domain is attached)
-Sitemap: https://ai-btms-platform.vercel.app/sitemap.xml
+# Sitemap URL
+Sitemap: https://btms-ai-platform.vercel.app/sitemap.xml
