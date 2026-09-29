@@ -1,0 +1,11 @@
+{
+  "name": "battery-thermal-management-system",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"npm start --prefix server\" \"npm run dev --prefix client\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}
