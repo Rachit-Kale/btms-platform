@@ -3,6 +3,11 @@
 
 ---
 
+## 1 command to start client and server
+```powershell
+npm start
+```
+
 ## ⚡ Quick Start (2 Terminals)
 
 ### 🖥️ Terminal 1 — Start Backend Server (Port 5000)
